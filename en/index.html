@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ricardo — Software Developer & Automation Specialist | Web Services</title>
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#0f172a;
+    --muted:#475569;
+    --brand:#4f46e5;
+    --brand-dark:#3730a3;
+    --accent:#7c3aed;
+    --soft:#eef2ff;
+    --line:#e2e8f0;
+    --ok:#059669;
+    --chipbg:#f1f5f9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:#f8fafc;
+    line-height:1.55;
+  }
+  .page{max-width:900px;margin:0 auto;padding:40px 28px 64px}
+  a{color:var(--brand);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--ok);color:#fff;font-size:12px;font-weight:700;
+    letter-spacing:.4px;text-transform:uppercase;
+    padding:6px 14px;border-radius:999px;
+  }
+  .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:#bbf7d0}
+
+  header{padding:16px 0 34px}
+  .kicker{font-size:13px;color:var(--brand);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+  h1{font-size:44px;line-height:1.08;letter-spacing:-1px;margin-bottom:12px}
+  h1 .amp{color:var(--brand)}
+  .tagline{font-size:20px;color:var(--muted);max-width:640px}
+  .contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .contact a{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid var(--line);background:#fff;
+    padding:9px 16px;border-radius:12px;font-size:14px;font-weight:600;color:var(--ink);
+  }
+  .contact a:hover{border-color:var(--brand);text-decoration:none}
+  .contact .lab{color:var(--muted);font-weight:500}
+
+  section{margin:0 0 34px}
+  h2{font-size:26px;letter-spacing:-.5px;margin-bottom:6px}
+  .sub{color:var(--muted);margin-bottom:18px;font-size:15px}
+
+  .proposition{
+    background:linear-gradient(135deg,var(--soft),#faf5ff);
+    border:1px solid var(--line);
+    border-radius:20px;padding:26px 28px;margin-bottom:34px;
+  }
+  .proposition h2{font-size:22px;margin-bottom:10px}
+  .proposition p{color:var(--muted);font-size:16px}
+  .proposition strong{color:var(--ink)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;
+  }
+  .card h3{font-size:17px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .card p{color:var(--muted);font-size:14px}
+  .card .tag{font-size:12px;color:var(--brand);font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+  .step .num{font-size:26px;font-weight:800;color:var(--soft);background:var(--brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .step h3{font-size:16px;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:14px}
+
+  .proj{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:12px}
+  .proj .dot{flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:800}
+  .proj h3{font-size:16px;margin-bottom:4px}
+  .proj p{color:var(--muted);font-size:14px;margin-bottom:8px}
+  .proj .links{display:flex;gap:14px;font-size:13px;font-weight:600}
+
+  .chip{display:inline-block;background:var(--chipbg);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;margin:0 8px 8px 0}
+  .chip.hot{background:var(--soft);border-color:#c7d2fe;color:var(--brand-dark)}
+
+  .cta{
+    background:linear-gradient(135deg,var(--brand),var(--accent));
+    color:#fff;border-radius:20px;padding:34px 30px;text-align:center;margin-top:8px;
+  }
+  .cta h2{color:#fff;font-size:26px;margin-bottom:8px}
+  .cta p{color:#e0e7ff;font-size:15px;margin-bottom:20px}
+  .btn{
+    display:inline-block;background:#fff;color:var(--brand-dark);
+    font-weight:700;font-size:15px;padding:13px 26px;border-radius:12px;
+  }
+  .btn:hover{text-decoration:none;transform:translateY(-1px)}
+  .cta .small{font-size:13px;color:#c7d2fe;margin-top:14px}
+
+  footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  @media (max-width:640px){
+    .page{padding:24px 16px 48px}
+    h1{font-size:34px}
+    .steps{grid-template-columns:1fr}
+  }
+
+  @media print{
+    body{background:#fff}
+    .page{max-width:none;padding:0;margin:0}
+    a{color:var(--ink)}
+    .no-print{display:none!important}
+    .card,.step,.proj,.proposition,.cta{border:1px solid #ddd;break-inside:avoid}
+    header{break-after:avoid}
+    .contact a{border:none;padding:0;margin-right:12px}
+    section{break-inside:auto}
+    .cta{background:#fff;color:var(--ink)}
+    .cta h2{color:var(--ink)}
+    .cta p,.cta .small{color:var(--muted)}
+    .btn{border:1px solid var(--brand);background:var(--soft);color:var(--brand-dark);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <span class="badge">Available for new projects</span>
+    <div style="height:22px"></div>
+    <div class="kicker">Software Developer &middot; Automation Specialist</div>
+    <h1>Ricardo <span class="amp">&middot;</span> I build websites<br>that sell for your business</h1>
+    <p class="tagline">Landing pages, web platforms, AI assistants and automations that save hours of work for companies. Projects delivered working, in production, within weeks.</p>
+    <div class="contact">
+      <a href="https://wa.me/573145735933?text=Hi%20Ricardo%2C%20I%20saw%20your%20services%20CV%20and%20I%20want%20to%20talk%20about%20a%20project."><span class="lab">WhatsApp</span> +57 314 573 5933</a>
+      <a href="mailto:ricardoscj2@hotmail.com"><span class="lab">Email</span> ricardoscj2@hotmail.com</a>
+      <a href="https://mis-desarrollos.vercel.app/"><span class="lab">Portfolio</span> mis-desarrollos.vercel.app</a>
+      <a href="https://github.com/RICORDOB"><span class="lab">GitHub</span> github.com/RICORDOB</a>
+    </div>
+  </header>
+
+  <div class="proposition">
+    <h2>I'm not looking for a job. I'm looking for projects I can contribute to.</h2>
+    <p>If you need <strong>a website that turns visitors into customers</strong>, a <strong>custom web system</strong> or an <strong>automation that removes repetitive tasks from your team</strong>, I handle the strategy, the build and the delivery. No jargon, something working from the first week, and a final result that is documented and ready to use.</p>
+  </div>
+
+  <section>
+    <h2>What I can build for you</h2>
+    <p class="sub">From a landing page that attracts clients to a system that works alone overnight.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Landing pages & websites</h3>
+        <p>Fast, modern and conversion-focused websites: responsive, with technical SEO and automated deployment. Ideal for businesses that want to sell more.</p>
+        <div style="height:10px"></div><span class="tag">Next.js &middot; React &middot; Tailwind</span>
+      </div>
+      <div class="card">
+        <h3>AI automation</h3>
+        <p>Reports, tax filings, invoice OCR and language-model queries. Office processes that run by themselves and give your hours back.</p>
+        <div style="height:10px"></div><span class="tag">Python &middot; Ollama &middot; Playwright</span>
+      </div>
+      <div class="card">
+        <h3>WhatsApp bots & messaging</h3>
+        <p>Bulk messaging with anti-ban limits and your own assistant you control, without depending on platforms that charge per message.</p>
+        <div style="height:10px"></div><span class="tag">Baileys &middot; Node.js &middot; Anti-ban</span>
+      </div>
+      <div class="card">
+        <h3>Custom apps & dashboards</h3>
+        <p>Enrollments, queries, inventory and admin dashboards with database, roles and permissions. Complete production platforms.</p>
+        <div style="height:10px"></div><span class="tag">Supabase &middot; PostgreSQL &middot; FastAPI</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How I work</h2>
+    <p class="sub">A clear three-step process, no surprises.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Discovery</h3>
+        <p>You tell me what hurts. We define scope, timeline and deliverables.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Building</h3>
+        <p>Short iterations, with something working from the first week.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Delivery</h3>
+        <p>The project delivered working, documented and ready to use. With deployment and support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Live projects</h2>
+    <p class="sub">Not mockups: live sites and systems you can check right now.</p>
+
+    <div class="proj">
+      <div class="dot" style="background:#0d9488">C</div>
+      <div>
+        <h3>Contador a tu Servicio</h3>
+        <p>Landing page for accounting services with client capture and WhatsApp funnel. Conversion-focused for a real accounting practice.</p>
+        <div class="links"><a href="https://contador-a-tu-servicio.vercel.app">View site &rarr;</a></div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="dot" style="background:#7c3aed">A</div>
+      <div>
+        <h3>Centro Educativo Amiguitos de Jesús</h3>
+        <p>Complete education platform: enrollments, Supabase authentication and live video classes (Next.js 16, LiveKit).</p>
+        <div class="links"><a href="https://amiguitos-de-jesus-web.vercel.app">View site &rarr;</a><a href="https://github.com/RICORDOB/amiguitos-de-jesus-web">Code</a></div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="dot" style="background:#2563eb">C</div>
+      <div>
+        <h3>Cristo English</h3>
+        <p>Gamified platform to learn English through the Bible: challenges, levels and content for young students.</p>
+        <div class="links"><a href="https://cristo-english.vercel.app">View site &rarr;</a><a href="https://github.com/RICORDOB/web-ing-igl">Code</a></div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="dot" style="background:#db2777">M</div>
+      <div>
+        <h3>MALI Store</h3>
+        <p>Online store landing with product catalog, built for conversion and fast mobile loading.</p>
+        <div class="links"><a href="https://malistore-landing.vercel.app">View site &rarr;</a><a href="https://github.com/RICORDOB/MALI-STORE-LANDING">Code</a></div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="dot" style="background:#ea580c">J</div>
+      <div>
+        <h3>JARVIS — AI personal assistant</h3>
+        <p>Voice assistant for macOS: listens, reasons with a local model and runs tools. Reads WhatsApp chats and only replies when told to.</p>
+        <p>Python &middot; Ollama &middot; Node.js &middot; Whisper</p>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="dot" style="background:#4f46e5">D</div>
+      <div>
+        <h3>DIAN Web Consultas</h3>
+        <p>Web app to query the DIAN tax filing report: automates navigation with Playwright and structures the data.</p>
+        <div class="links"><a href="https://github.com/RICORDOB/DIAN-WEB-CONSULTAS">Code</a></div>
+      </div>
+    </div>
+
+    <p style="color:var(--muted);font-size:14px">+ 3 more projects (invoice OCR, WhatsApp bulk sender, tax automation). See all: <a href="https://mis-desarrollos.vercel.app/">mis-desarrollos.vercel.app</a></p>
+  </section>
+
+  <section>
+    <h2>Stack & tools</h2>
+    <p class="sub">Everything chosen so your project is fast, secure and easy to maintain.</p>
+    <span class="chip hot">Next.js</span><span class="chip hot">React</span><span class="chip hot">TypeScript</span><span class="chip hot">Python</span><span class="chip hot">Node.js</span>
+    <span class="chip">FastAPI</span><span class="chip">TailwindCSS</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">Ollama</span><span class="chip">Playwright</span><span class="chip">Baileys</span><span class="chip">OCR</span><span class="chip">Whisper</span><span class="chip">Excel/CSV</span><span class="chip">Pandas</span><span class="chip">Vercel</span><span class="chip">Render</span><span class="chip">Git/GitHub</span><span class="chip">CI/CD</span><span class="chip">Linux/macOS</span>
+  </section>
+
+  <div class="cta">
+    <h2>Do you have a website or a build in mind?</h2>
+    <p>Message me today and get a clear proposal, no commitment and no jargon. I reply the same day.</p>
+    <a class="btn" href="https://wa.me/573145735933?text=Hi%20Ricardo%2C%20I%20saw%20your%20services%20CV%20and%20I%20want%20to%20talk%20about%20a%20project.">Let's talk on WhatsApp</a>
+    <p class="small">Mon-Fri, 9:00&ndash;18:00 (GMT-5) &middot; Available worldwide</p>
+  </div>
+
+  <footer>
+    <span>Ricardo &middot; Software Developer & Automation Specialist</span>
+    <span>WhatsApp +57 314 573 5933 &middot; ricardoscj2@hotmail.com</span>
+  </footer>
+
+</div>
+</body>
+</html>
